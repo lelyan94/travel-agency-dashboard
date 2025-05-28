@@ -3,7 +3,7 @@ import { Link, NavLink } from "react-router";
 import { sidebarItems } from "~/constants";
 import { cn } from "../lib/utlis";
 
-const NavItems = () => {
+const NavItems = ({ handleClick }: { handleClick?: () => void}) => {
     const user = {
         name: 'Lelyan',
         email: 'lelyan94@outlook.com',
@@ -14,7 +14,7 @@ const NavItems = () => {
         <section className="nav-items flex flex-col justify-between h-full">
             <Link to='/' className="link-logo">
                 <img src="/assets/icons/logo.svg" alt="logo" className="size-[30px]" />
-                <h1>Tourvisto</h1>
+                <h1>Roamara</h1>
             </Link>
 
             <div className="container">
@@ -24,7 +24,7 @@ const NavItems = () => {
                             {({ isActive }: { isActive: boolean }) => (
                                 <div className={cn('group nav-item', {
                                     'bg-primary-100 !text-white': isActive
-                                })}>
+                                })} onClick={handleClick}>
                                     <img
                                         src={icon}
                                         alt={label}
