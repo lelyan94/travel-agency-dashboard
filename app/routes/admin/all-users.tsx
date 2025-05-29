@@ -1,9 +1,15 @@
+import {Header} from "../../../components";
 
 
 export default function AllUsersPage() {
     return (
-        <div>
-            <h1>All Users Page</h1>
-        </div>
+        <main className="dashboard wrapper">
+            <Header title="Trips Page"
+                    description="Check out our currrnt users in real time "
+            />
+
+            ALL Users Page Content
+
+        </main>
     );
 }
