@@ -1,5 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
-import ButtonsPkg from "@syncfusion/ej2-react-buttons";
+import * as ButtonsPkg from "@syncfusion/ej2-react-buttons";
 const { ChipDirective, ChipListComponent, ChipsDirective } = ButtonsPkg;
 import {cn, getFirstWord} from "../lib/utlis";
 

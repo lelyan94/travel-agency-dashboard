@@ -22,10 +22,15 @@ export const links: Route.LinksFunction = () => [
     href: "https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap",
   },
 ];
-import ej2Base from "@syncfusion/ej2-base";
-const { registerLicense } = ej2Base;
+(async () => {
+  const ej2Base = await import('@syncfusion/ej2-base');
+  if (typeof ej2Base.registerLicense === 'function') {
+    ej2Base.registerLicense(import.meta.env.VITE_SYNCFUSION_LICENSE_KEY);
+  } else {
+    console.warn('registerLicense function not found in @syncfusion/ej2-base');
+  }
+})();
 
-registerLicense(import.meta.env.VITE_SYNCFUSION_LICENSE_KEY);
 
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
